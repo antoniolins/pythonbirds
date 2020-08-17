@@ -23,11 +23,12 @@ if __name__ == '__main__':
     for filho in luciano.filhos:
         print(filho.nome)
 
-    luciano.sobrenome = 'Ramalho' # atributo dinâmico
-    print(luciano.__dict__)
+    luciano.sobrenome = 'Ramalho' '''atributo dinâmico criado exclusivamente para a instância luciano
+                                     nenhum outro objeto da classe será afetado. '''
+    print(luciano.__dict__) # __dict__ informa todos os atributos do objeto
   #  del luciano.filhos   # o contrário da criação do atributo dinâmico
     luciano.olhos = 1 #
-    # del luciano.olhos
+    # del luciano.olhos # Nesse caso estamos apagando um atributo do objeto e não da classe
     print(luciano.__dict__) # checando os atributos de instância
     print(renzo.__dict__)
     Pessoa.olhos = 3
