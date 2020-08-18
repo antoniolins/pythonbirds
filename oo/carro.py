@@ -31,11 +31,15 @@ class Direção:
             return Direção.giro[3]
         return Direção.giro[Direção.valor]
 
-print(Motor.velocidade)
+class Carro(Motor, Direção):
+    Motor.acelerar_motor()
+    print(Motor.velocidade)
+
+# print(Motor.velocidade)
 # print(Direção.valor)
-print()
-Motor.acelerar_motor()
-Motor.acelerar_motor()
+# print()
+# Motor.acelerar_motor()
+# Motor.acelerar_motor()
 Motor.acelerar_motor()
 # Direção.girar_a_direita()
 
