@@ -1,21 +1,19 @@
 class Motor:
 
-    velocidade = None
-
-    def __init__(self, velocidade):
+    def __init__(self):
         self.velocidade = 0
 
     def acelerar(self):
-        Motor.velocidade += 1
-        return Motor.velocidade
+        self.velocidade += 1
+        return self.velocidade
 
     def frear(self):
-        Motor.velocidade -= 2
-        if Motor.velocidade < 0:
-            Motor.velocidade = 0
-        return Motor.velocidade
+        self.velocidade -= 2
+        if self.velocidade < 0:
+            self.velocidade = 0
+        return self.velocidade
 
-class Direção(self):
+class Direcao:
     valor = 0
     giro = ['Norte', 'Leste', 'Sul', 'Oeste']
 
@@ -23,52 +21,28 @@ class Direção(self):
 
 
     def girar_a_direita(self):
-        Direção.valor += 1
-        if Direção.valor > 3:
-            Direção.valor = 0
-            return Direção.giro[0]
-        return Direção.giro[Direção.valor]
+        Direcao.valor += 1
+        if Direcao.valor > 3:
+            Direcao.valor = 0
+            return Direcao.giro[0]
+        return Direcao.giro[Direcao.valor]
 
     def girar_a_esquerda(self):
-        Direção.valor -=1
-        if Direção.valor < 0:
-            Direção.valor = 3
-            return Direção.giro[3]
-        return Direção.giro[Direção.valor]
+        Direcao.valor -=1
+        if Direcao.valor < 0:
+            Direcao.valor = 3
+            return Direcao.giro[3]
+        return Direcao.giro[Direcao.valor]
 
 class Mycar:
   def __init__(self, velocidade = 0, valor = 0):
         self.velocidade = Motor.velocidade
-        self.valor = Direção.valor
+        self.valor = Direcao.valor
 
-# carro1 = Carro()
-# carro1.acelerar_motor()
-#  print(Motor.velocidade)
+motor = Motor()
+print(motor.velocidade)
+motor.acelerar()
+print(motor.velocidade)
 
-car1 = Mycar()
-car1.velocidade
-car1.Motor.acelerar()
-
-print(car1.velocidade)
-
-# print(Motor.velocidade)
-# print(Direção.valor)
-# print()
-# Motor.acelerar_motor()
-# Motor.acelerar_motor()
-#Motor.acelerar_motor()
-# Direção.girar_a_direita()
-
-#print(Motor.velocidade)
-# print(Direção.valor)
-#print()
-#Motor.frear_motor()
-#print(Motor.velocidade)
-#print()
-#Motor.frear_motor()
-#print(Motor.velocidade)
-#print()
-
-# Motor.acelerar_motor()
-# print(Motor.velocidade)
-
+motor.frear()
+print(motor.velocidade)
