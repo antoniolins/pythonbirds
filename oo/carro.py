@@ -1,21 +1,15 @@
 
 
 class Motor:
-
-    velocidade = None
-
-    def __init__(self, velocidade):
+    def __init__(self):
         self.velocidade = 0
 
     def acelerar(self):
-        Motor.velocidade += 1
-        return Motor.velocidade
+        self.velocidade += 1
 
     def frear(self):
-        Motor.velocidade -= 2
-        if Motor.velocidade < 0:
-            Motor.velocidade = 0
-        return Motor.velocidade
+        self.velocidade -= 2
+        self.velocidade = max(0, self.velocidade)
 
 class Direcao:
     giros_a_direita_dct = {'Norte':  'Leste', 'Leste':  'Sul',
@@ -24,7 +18,7 @@ class Direcao:
                            'Sul': 'Leste', 'Leste': 'Norte'}
 
     def __init__(self):
-        self.__direcao = 0
+        self.__direcao = 0 # Inicia no Norte
         self.valor = giros[self.__direcao]
 
     # print(f' giro = {giros[self.__direcao]}')
