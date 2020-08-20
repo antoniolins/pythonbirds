@@ -26,6 +26,7 @@ class Direcao:
 
     def girar_a_esquerda(self):
         self.__direcao -= 1
+
         if self.__direcao < 0:
             self.__direcao = 3
         self.valor = GIROS_ESQUERDA[self.__direcao]
