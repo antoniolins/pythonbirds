@@ -101,7 +101,7 @@ class AtorTestes(TestCase):
         self.assert_nao_colisao(Ator(1, 2), ator)
         self.assert_nao_colisao(Ator(1, 3), ator)
 
-    def test_caracter(self):
+    def test_carater(self):
         'Teste de caracter para status ATIVO e DESTRUIDO'
         ator = Ator()
         self.assertEqual('A', ator.caracter())
