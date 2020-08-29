@@ -36,7 +36,6 @@ class Fase():
         self._porcos = []
         self._obstaculos = []
 
-
     def adicionar_obstaculo(self, *obstaculos):
         """
         Adiciona obstáculos em uma fase
@@ -48,7 +47,6 @@ class Fase():
     def adicionar_porco(self, *porcos):
         """
         Adiciona porcos em uma fase
-
         :param porcos:
         """
         self._porcos.extend(porcos)
@@ -56,20 +54,20 @@ class Fase():
     def adicionar_passaro(self, *passaros):
         """
         Adiciona pássaros em uma fase
-
         :param passaros:
         """
         self._passaros.extend(passaros)
+
 
     def status(self):
         """
         Método que indica com mensagem o status do jogo
 
-        Se o jogo está em andamento (ainda tem porco ativo e pássaro ativo), retorna essa mensagem.
+        Se o jogo está em andamento (ainda tem passaro ativo e pássaro ativo), retorna essa mensagem.
 
-        Se o jogo acabou com derrota (ainda existe porco ativo), retorna essa mensagem
+        Se o jogo acabou com derrota (ainda existe passaro ativo), retorna essa mensagem
 
-        Se o jogo acabou com vitória (não existe porco ativo), retorna essa mensagem
+        Se o jogo acabou com vitória (não existe passaro ativo), retorna essa mensagem
 
         :return:
         """
@@ -79,6 +77,7 @@ class Fase():
             return EM_ANDAMENTO
         else:
             return DERROTA
+
 
     def lancar(self, angulo, tempo):
         """
@@ -103,7 +102,7 @@ class Fase():
         :param tempo: tempo para o qual devem ser calculados os pontos
         :return: objeto do tipo Ponto
         """
-        pontos=[self._transformar_em_ponto(a) for a in self._passaros+self._obstaculos+self._porcos]
+        pontos=[self._transformar_em_ponto(a) for a in self._passaros+self._obstaculos+self._passaros]
 
         return pontos
 
@@ -121,4 +120,5 @@ class Fase():
             if passaro.status==ATIVO:
                 return True
         return False
+
 
